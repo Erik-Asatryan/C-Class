@@ -7,8 +7,11 @@ struct Prod{
 
 class CoffeeMachine{
     public:
+        // Փոփոխականների անունները պետք է սկսեն m_, հետո տիպւ նկարագրող մասս ու նոր փոփոխականի անունը։ Օր․՝ m_arrProduct։
         std::string* arrProd;
         int* arrSum;
+    
+        // Ցանկալի է ունենալ փոփոխական քանակի տարրերով (դինամիկ) զանգված
         CoffeeMachine(std::string listOfProducts[10], int PriceList[10]){
             arrProd = listOfProducts;
             arrSum = PriceList;
@@ -22,7 +25,8 @@ class CoffeeMachine{
                 std::cout<<num1++<<". "<<arrProd[i]<<"----------"<<arrSum[i]<<std::endl;
             }
         }
-
+ 
+        // Ցանկալի էր վերադարձնել { "նամակ"(Սուրճի անուն, կամ սխալի մասին նամակ), մանր } կառուցվածք
         void toOrder(Prod order){
             for(int j = 0; j<10; j++){
                 if(order.nameProd == arrProd[j]){
@@ -71,6 +75,7 @@ int main(){
         return 0;
 
     }else{
+        // Հաճախորդին կարելի էր մի քիչ նուրբ խնդրել, որ գնա ուրիշ տեղ: Կարող ա օրերից մի օր ուզենա start անել )))
         std::cout<<"go drink from someone else's place"<<std::endl;
         return 1;
     }
